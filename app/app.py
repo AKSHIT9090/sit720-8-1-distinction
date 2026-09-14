@@ -2,10 +2,11 @@ import streamlit as st
 import pandas as pd
 import joblib
 from datetime import date
-
+from pathlib import Path
 
 # Load the trained model
-model = joblib.load("housing_price_model.pkl")
+MODEL_PATH = Path(__file__).resolve().parent / "housing_price_model.pkl"
+model = joblib.load(MODEL_PATH)
 
 
 # Page configuration
